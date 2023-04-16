@@ -20,9 +20,9 @@ fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 while True:
     _, frame = cap.read()
 
-    gris = cv2.cvtColor(frame, cv2.COLOR_BGR2gris)
-    caras = cara_cascade.detectMultiScale(gris, 1.3, 5)
-    cuerpos = cara_cascade.detectMultiScale(gris, 1.3, 5)
+    gris = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    caras = cara_cascada.detectMultiScale(gris, 1.3, 5)
+    cuerpos = cara_cascada.detectMultiScale(gris, 1.3, 5)
 
     if len(caras) + len(cuerpos) > 0:
         if deteccion:
@@ -47,8 +47,6 @@ while True:
     if deteccion:
         out.write(frame)
 
-    # for (x, y, anchura, altura) en caras:
-    #    cv2.rectangle(frame, (x, y), (x + anchura, y + altura), (255, 0, 0), 3)
 
     cv2.imshow("Camera", frame)
 
