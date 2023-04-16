@@ -21,8 +21,8 @@ while True:
     _, frame = cap.read()
 
     gris = cv2.cvtColor(frame, cv2.COLOR_BGR2gris)
-    caras = face_cascade.detectMultiScale(gris, 1.3, 5)
-    cuerpos = face_cascade.detectMultiScale(gris, 1.3, 5)
+    caras = cara_cascade.detectMultiScale(gris, 1.3, 5)
+    cuerpos = cara_cascade.detectMultiScale(gris, 1.3, 5)
 
     if len(caras) + len(cuerpos) > 0:
         if deteccion:
